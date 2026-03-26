@@ -137,15 +137,15 @@ export default function OurStory() {
           </ScrollReveal>
 
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-[#c9a84c]/30" />
+            {/* Timeline line — from first circle center to last circle center */}
+            <div className="absolute left-4 md:left-8 top-[72px] bottom-[96px] w-0.5 bg-[#c9a84c]/30" />
 
             <div className="space-y-8">
               {timeline.map((entry, i) => (
                 <ScrollReveal key={entry.year} delay={i * 0.1}>
                   <div className="relative pl-12 md:pl-20">
-                    {/* Year badge */}
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-hidden">
+                    {/* Year badge — centered on the line */}
+                    <div className="absolute left-[-4px] md:left-[12px] top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-hidden">
                       {i === 0 ? (
                         /* Cross — Church is Born */
                         <svg viewBox="0 0 32 32" className="w-6 h-6 text-[#f5f0e6] icon-cross" fill="currentColor">
