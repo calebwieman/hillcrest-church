@@ -147,12 +147,19 @@ export default function OurStory() {
                     {/* Pine tree badge */}
                     <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-hidden">
                       <svg
-                        viewBox="0 0 24 24"
-                        className="w-6 h-6 text-[#f5f0e6] tree-icon"
+                        viewBox="0 0 32 32"
+                        className="w-7 h-7 text-[#f5f0e6] tree-icon"
                         style={{ animationDelay: treeDelays[i] }}
                         fill="currentColor"
                       >
-                        <path d="M12 2L5 14h4v8h6v-8h4z" />
+                        {/* Bottom tier */}
+                        <polygon points="16,22 5,28 27,28" />
+                        {/* Middle tier */}
+                        <polygon points="16,14 7,20 25,20" />
+                        {/* Top tier */}
+                        <polygon points="16,6 9,12 23,12" />
+                        {/* Trunk */}
+                        <rect x="14" y="28" width="4" height="3" />
                       </svg>
                     </div>
 
