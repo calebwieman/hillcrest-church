@@ -68,7 +68,7 @@ export default function OurStory() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           {/* Mission */}
           <ScrollReveal>
@@ -123,7 +123,7 @@ export default function OurStory() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 px-4 bg-[#f5f0e6]">
+      <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <h2
@@ -176,7 +176,7 @@ export default function OurStory() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 bg-[#2d5a3d]">
+      <section className="py-12 md:py-24 px-4 bg-[#2d5a3d]">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <p className="text-white/80 text-xl mb-6">
@@ -186,7 +186,7 @@ export default function OurStory() {
           <ScrollReveal delay={0.1}>
             <Link
               href="/im-new"
-              className="inline-block px-10 py-4 bg-white hover:bg-[#f5f0e6] text-[#2d5a3d] rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
+              className="inline-block px-10 py-4 bg-white hover:bg-[#f5f0e6] text-[#2d5a3d] rounded-xl font-bold text-lg transition-all duration-300 md:hover:scale-105"
             >
               Plan Your Visit
             </Link>

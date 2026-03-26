@@ -49,7 +49,7 @@ export default function Home() {
           <ScrollReveal direction="up" delay={0.2}>
             <Link
               href="/im-new"
-              className="inline-block px-10 py-4 bg-[#c9a84c] hover:bg-[#e8c76a] text-[#1a1814] rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-block px-10 py-4 bg-[#c9a84c] hover:bg-[#e8c76a] text-[#1a1814] rounded-xl font-bold text-lg transition-all duration-300 md:hover:scale-105 shadow-lg"
             >
               Join Us Sunday
             </Link>
@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Gathering Times */}
-      <section className="py-24 px-4 bg-[#f5f0e6]">
+      <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Sunday */}
             <ScrollReveal delay={0.1}>
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-[#2d5a3d]">
+              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-md md:hover:shadow-xl transition-all duration-300 border-t-4 border-[#2d5a3d]">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-[#2d5a3d]/10 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-[#2d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,7 +135,7 @@ export default function Home() {
 
             {/* Wednesday */}
             <ScrollReveal delay={0.2}>
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-[#c9a84c]">
+              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-md md:hover:shadow-xl transition-all duration-300 border-t-4 border-[#c9a84c]">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-[#c9a84c]/10 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-[#c9a84c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -166,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* Our Story Teaser */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-24 px-4 bg-[#1a1814]">
+      <section className="py-12 md:py-24 px-4 bg-[#1a1814]">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2
@@ -227,9 +227,9 @@ export default function Home() {
                     src={photo.src}
                     alt={photo.alt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 md:group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1814]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1814]/60 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </ScrollReveal>
             ))}
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* Location */}
-      <section className="py-24 px-4 bg-[#f5f0e6]">
+      <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">

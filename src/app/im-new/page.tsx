@@ -62,7 +62,7 @@ export default function ImNew() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <h2
@@ -118,7 +118,7 @@ export default function ImNew() {
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="bg-[#f5f0e6] rounded-2xl p-8 flex gap-5 items-start hover:shadow-lg transition-all duration-300">
+                <div className="bg-[#f5f0e6] rounded-2xl p-8 flex gap-5 items-start md:hover:shadow-lg transition-all duration-300">
                   <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
                     {item.icon}
                   </div>
@@ -139,7 +139,7 @@ export default function ImNew() {
       </section>
 
       {/* What to Wear */}
-      <section className="py-24 px-4 bg-[#2d5a3d]">
+      <section className="py-12 md:py-24 px-4 bg-[#2d5a3d]">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <p className="text-white/60 font-semibold uppercase tracking-widest text-sm mb-4">
@@ -161,7 +161,7 @@ export default function ImNew() {
       </section>
 
       {/* Gathering Times */}
-      <section className="py-24 px-4 bg-[#f5f0e6]">
+      <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2
@@ -189,7 +189,7 @@ export default function ImNew() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
           <ScrollReveal>
             <h2
@@ -283,7 +283,7 @@ export default function ImNew() {
       </section>
 
       {/* Location */}
-      <section className="py-24 px-4 bg-[#f5f0e6]">
+      <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">

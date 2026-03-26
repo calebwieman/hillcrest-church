@@ -15,6 +15,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -57,7 +58,13 @@
   }
 
   .card:hover {
-    @apply shadow-xl -translate-y-1;
+    @apply shadow-xl;
+  }
+
+  @media (min-width: 768px) {
+    .card:hover {
+      @apply -translate-y-1;
+    }
   }
 
   .gradient-text {

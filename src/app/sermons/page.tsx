@@ -41,7 +41,7 @@ export default function Sermons() {
       </section>
 
       {/* Sermons Content */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-12 md:py-24 px-4 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <div className="bg-[#f5f0e6] rounded-2xl p-10 md:p-14">
@@ -68,7 +68,7 @@ export default function Sermons() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 bg-[#2d5a3d]">
+      <section className="py-12 md:py-24 px-4 bg-[#2d5a3d]">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2
@@ -82,7 +82,7 @@ export default function Sermons() {
             </p>
             <Link
               href="/im-new"
-              className="inline-block px-10 py-4 bg-white hover:bg-[#f5f0e6] text-[#2d5a3d] rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
+              className="inline-block px-10 py-4 bg-white hover:bg-[#f5f0e6] text-[#2d5a3d] rounded-xl font-bold text-lg transition-all duration-300 md:hover:scale-105"
             >
               Plan Your Visit
             </Link>

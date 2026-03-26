@@ -20,8 +20,8 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="relative w-10 h-10">
+          <Link href="/" className="flex items-center gap-3 md:hover:opacity-80 transition-opacity">
+            <div className="relative w-56 h-16 flex-shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="Hillcrest Baptist Church"
@@ -29,7 +29,7 @@ export default function Nav() {
                 className="object-contain"
               />
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden md:block">
               <p className="text-[#2d5a3d] font-bold text-lg leading-tight" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
                 Hillcrest
               </p>
