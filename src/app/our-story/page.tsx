@@ -145,74 +145,24 @@ export default function OurStory() {
                 <ScrollReveal key={entry.year} delay={i * 0.1}>
                   <div className="relative pl-12 md:pl-20">
                     {/* Pine tree badge */}
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-visible">
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-hidden">
                       <svg
-                        viewBox="0 0 40 48"
-                        className="w-8 h-9 text-[#f5f0e6] tree-icon"
+                        viewBox="0 0 32 40"
+                        className="w-7 h-8 text-[#f5f0e6] tree-icon"
                         style={{ animationDelay: treeDelays[i] }}
-                        fill="none"
+                        fill="currentColor"
                       >
-                        {/* Trunk */}
-                        <rect x="17.5" y="38" width="5" height="8" rx="1" fill="currentColor" className="opacity-70" />
-
-                        {/* Bottom branch - left */}
-                        <path
-                          d="M20 34 L8 36 Q6 36 7 34 L16 30 Z"
-                          fill="currentColor"
-                          className="tree-branch-left"
-                          style={{ animationDelay: `${i * 0.4 + 0}s` }}
-                        />
-                        {/* Bottom branch - right */}
-                        <path
-                          d="M20 34 L32 36 Q34 36 33 34 L24 30 Z"
-                          fill="currentColor"
-                          className="tree-branch-right"
-                          style={{ animationDelay: `${i * 0.4 + 0.2}s` }}
-                        />
-
-                        {/* Lower foliage cluster */}
-                        <ellipse cx="20" cy="30" rx="13" ry="6" fill="currentColor" className="tree-foliage" opacity="0.9" />
-
-                        {/* Middle branch - left */}
-                        <path
-                          d="M20 24 L10 25 Q8 25 9 23 L17 20 Z"
-                          fill="currentColor"
-                          className="tree-branch-left"
-                          style={{ animationDelay: `${i * 0.4 + 0.5}s` }}
-                        />
-                        {/* Middle branch - right */}
-                        <path
-                          d="M20 24 L30 25 Q32 25 31 23 L23 20 Z"
-                          fill="currentColor"
-                          className="tree-branch-right"
-                          style={{ animationDelay: `${i * 0.4 + 0.7}s` }}
-                        />
-
-                        {/* Middle foliage cluster */}
-                        <ellipse cx="20" cy="22" rx="10" ry="5" fill="currentColor" className="tree-foliage" opacity="0.95" style={{ animationDelay: `${i * 0.4 + 0.3}s` }} />
-
-                        {/* Top branch - left */}
-                        <path
-                          d="M20 15 L13 16 Q11 16 12 14 L18 12 Z"
-                          fill="currentColor"
-                          className="tree-branch-left"
-                          style={{ animationDelay: `${i * 0.4 + 1}s` }}
-                        />
-                        {/* Top branch - right */}
-                        <path
-                          d="M20 15 L27 16 Q29 16 28 14 L22 12 Z"
-                          fill="currentColor"
-                          className="tree-branch-right"
-                          style={{ animationDelay: `${i * 0.4 + 1.2}s` }}
-                        />
-
-                        {/* Top foliage */}
-                        <ellipse cx="20" cy="14" rx="7" ry="4" fill="currentColor" className="tree-foliage" style={{ animationDelay: `${i * 0.4 + 0.6}s` }} />
-
-                        {/* Tip */}
-                        <path d="M20 4 L16 10 Q14 10 15 8 L18 6 Z" fill="currentColor" className="tree-foliage" opacity="0.8" />
-                        <path d="M20 4 L24 10 Q26 10 25 8 L22 6 Z" fill="currentColor" className="tree-foliage" opacity="0.8" />
-                        <path d="M20 4 L20 12 Z" fill="currentColor" opacity="0.9" />
+                        {/* Jagged conifer silhouette using a clip-path approach with triangle tiers */}
+                        <g>
+                          {/* Bottom tier — wide with notch cutouts */}
+                          <polygon points="16,22 2,36 5,33 9,37 12,33 16,36 20,33 23,37 27,33 30,36 16,22" />
+                          {/* Middle tier */}
+                          <polygon points="16,13 6,25 9,23 13,26 16,23 19,26 23,23 26,25 16,13" />
+                          {/* Top tier */}
+                          <polygon points="16,4 10,13 12,12 14,14 16,11 18,14 20,12 22,13 16,4" />
+                          {/* Trunk */}
+                          <rect x="13" y="36" width="6" height="4" rx="1" opacity="0.6" />
+                        </g>
                       </svg>
                     </div>
 
