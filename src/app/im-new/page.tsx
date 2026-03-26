@@ -1,0 +1,343 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import { useState } from "react";
+
+const gatheringTimes = [
+  { day: "Sunday Bible Study", time: "9:30 AM" },
+  { day: "Sunday Worship", time: "10:45 AM" },
+  { day: "Wednesday Adults", time: "6:30 PM" },
+  { day: "Wednesday College", time: "7:30 PM" },
+];
+
+export default function ImNew() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-[#f5f0e6]">
+      <Nav />
+
+      {/* Hero */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/theme-hero1.jpg"
+            alt="Welcome to Hillcrest"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a1814]/80 via-[#2d5a3d]/50 to-[#1a1814]/70" />
+        </div>
+        <div className="relative z-10 text-center px-4">
+          <ScrollReveal direction="up">
+            <h1
+              className="text-white text-4xl sm:text-5xl md:text-7xl font-bold mb-4"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+            >
+              We Can't Wait to Meet You
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1}>
+            <p className="text-white/80 text-lg md:text-xl max-w-xl mx-auto">
+              A place where everyone belongs
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ScrollReveal>
+            <h2
+              className="text-3xl md:text-5xl font-bold text-[#2d5a3d] text-center mb-4"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+            >
+              What to Expect
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.05}>
+            <p className="text-center text-[#7a5c3a] mb-16 text-lg">
+              Here's everything you need to know before you arrive
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#2d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                title: "Service Length",
+                desc: "A typical service will last about 75 minutes.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#2d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                  </svg>
+                ),
+                title: "Music Style",
+                desc: "We sing a good mix of contemporary and traditional music led by our worship team.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#2d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                ),
+                title: "Nursery Available",
+                desc: "Nursery is available for your use during the service.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#2d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                title: "Fellowship",
+                desc: "Plan to hang around after the service for fellowship and meeting new people.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.1}>
+                <div className="bg-[#f5f0e6] rounded-2xl p-8 flex gap-5 items-start hover:shadow-lg transition-all duration-300">
+                  <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3
+                      className="text-xl font-bold text-[#2d5a3d] mb-2"
+                      style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-[#1a1814]/70 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to Wear */}
+      <section className="py-24 px-4 bg-[#2d5a3d]">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-white/60 font-semibold uppercase tracking-widest text-sm mb-4">
+              What to Wear
+            </p>
+            <h2
+              className="text-3xl md:text-5xl font-bold text-white mb-6"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+            >
+              Come As You Are
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/80 text-xl leading-relaxed">
+              Hillcrest is a casual, authentic environment. You can wear jeans and a t-shirt or your Sunday best. Most of us dress for comfort. We want you to feel comfortable, too.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Gathering Times */}
+      <section className="py-24 px-4 bg-[#f5f0e6]">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <h2
+              className="text-3xl md:text-5xl font-bold text-[#2d5a3d] mb-4"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+            >
+              When We Meet
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.05}>
+            <p className="text-[#7a5c3a] mb-12 text-lg">We would love to worship with you</p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {gatheringTimes.map((item, i) => (
+              <ScrollReveal key={item.day} delay={i * 0.1}>
+                <div className="bg-white rounded-xl p-6 shadow-sm flex justify-between items-center">
+                  <span className="font-semibold text-[#1a1814]">{item.day}</span>
+                  <span className="text-[#2d5a3d] font-bold">{item.time}</span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <ScrollReveal>
+            <h2
+              className="text-3xl md:text-5xl font-bold text-[#2d5a3d] text-center mb-4"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+            >
+              Get in Touch
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.05}>
+            <p className="text-center text-[#1a1814]/60 mb-12 text-lg">
+              Have questions? We'd love to hear from you.
+            </p>
+          </ScrollReveal>
+
+          {submitted ? (
+            <ScrollReveal>
+              <div className="bg-[#f5f0e6] rounded-2xl p-10 text-center">
+                <div className="w-16 h-16 bg-[#2d5a3d] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3
+                  className="text-2xl font-bold text-[#2d5a3d] mb-3"
+                  style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                >
+                  Thank You!
+                </h3>
+                <p className="text-[#1a1814]/70">
+                  We've received your message and will be in touch soon.
+                </p>
+              </div>
+            </ScrollReveal>
+          ) : (
+            <ScrollReveal delay={0.1}>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1814] mb-2">Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e0d5] bg-[#f5f0e6] text-[#1a1814] focus:outline-none focus:ring-2 focus:ring-[#2d5a3d] transition-all"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1814] mb-2">Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e0d5] bg-[#f5f0e6] text-[#1a1814] focus:outline-none focus:ring-2 focus:ring-[#2d5a3d] transition-all"
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1814] mb-2">Phone (optional)</label>
+                  <input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e0d5] bg-[#f5f0e6] text-[#1a1814] focus:outline-none focus:ring-2 focus:ring-[#2d5a3d] transition-all"
+                    placeholder="(555) 123-4567"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1814] mb-2">Message</label>
+                  <textarea
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-[#e5e0d5] bg-[#f5f0e6] text-[#1a1814] focus:outline-none focus:ring-2 focus:ring-[#2d5a3d] transition-all resize-none"
+                    placeholder="How can we help you?"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full btn-primary text-center"
+                >
+                  Send Message
+                </button>
+              </form>
+            </ScrollReveal>
+          )}
+        </div>
+      </section>
+
+      {/* Location */}
+      <section className="py-24 px-4 bg-[#f5f0e6]">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal direction="left">
+              <div>
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-[#2d5a3d] mb-6"
+                  style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                >
+                  Find Us
+                </h2>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-[#2d5a3d] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <div>
+                      <p className="font-semibold text-[#1a1814]">Address</p>
+                      <p className="text-[#1a1814]/70">902 North Washington</p>
+                      <p className="text-[#1a1814]/70">Stillwater, OK 74075</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <svg className="w-6 h-6 text-[#2d5a3d] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <div>
+                      <p className="font-semibold text-[#1a1814]">Phone</p>
+                      <a href="tel:4053727330" className="text-[#2d5a3d] hover:underline">405.372.7330</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="rounded-2xl overflow-hidden shadow-xl h-72 md:h-80">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.123456!2d-97.0584!3d36.1156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDA2JzU0LjEiTiA5N8KwMDMnMzIuMCJX!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Hillcrest Baptist Church Location"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
