@@ -33,6 +33,8 @@ const timeline = [
   },
 ];
 
+const treeDelays = ["0s", "0.75s", "1.5s", "2.25s"];
+
 export default function OurStory() {
   return (
     <div className="flex flex-col min-h-screen bg-[#f5f0e6]">
@@ -142,14 +144,17 @@ export default function OurStory() {
               {timeline.map((entry, i) => (
                 <ScrollReveal key={entry.year} delay={i * 0.1}>
                   <div className="relative pl-12 md:pl-20">
-                    {/* Year badge - on the line */}
-                    <div className="absolute left-0 md:left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10">
-                      <span
-                        className="text-white text-xs font-bold"
-                        style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                    {/* Pine tree badge */}
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 text-[#f5f0e6] tree-icon"
+                        style={{ animationDelay: treeDelays[i] }}
+                        fill="currentColor"
                       >
-                        {entry.year.slice(-2)}
-                      </span>
+                        <path d="M12 2L7 9h3l-3 5h4l-3 5h10L15 14h4l-3-5h3z" />
+                        <rect x="10" y="19" width="4" height="3" />
+                      </svg>
                     </div>
 
                     <div className="card p-6 md:p-8">
