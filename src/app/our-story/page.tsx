@@ -124,7 +124,7 @@ export default function OurStory() {
 
       {/* Timeline */}
       <section className="py-12 md:py-24 px-4 bg-[#f5f0e6]">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <h2
               className="text-3xl md:text-5xl font-bold text-[#2d5a3d] text-center mb-16"
@@ -136,36 +136,36 @@ export default function OurStory() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#c9a84c]/30 -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-[#c9a84c]/30" />
 
-            <div className="space-y-12">
+            <div className="space-y-8">
               {timeline.map((entry, i) => (
                 <ScrollReveal key={entry.year} delay={i * 0.1}>
-                  <div className="relative flex flex-col md:flex-row items-start gap-8">
-                    {/* Dot - desktop */}
-                    <div className="hidden md:flex flex-col items-center">
-                      <div className="w-6 h-6 rounded-full bg-[#c9a84c] border-4 border-[#f5f0e6] shadow z-10 flex-shrink-0" />
+                  <div className="relative pl-12 md:pl-20">
+                    {/* Year badge - on the line */}
+                    <div className="absolute left-0 md:left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10">
+                      <span
+                        className="text-white text-xs font-bold"
+                        style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                      >
+                        {entry.year.slice(-2)}
+                      </span>
                     </div>
 
-                    {/* Content */}
-                    <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-16 md:pl-0`}>
-                      <div className={`card p-8 ${i % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
-                        <div className="flex items-center gap-3 mb-3 md:justify-end">
-                          <span
-                            className="text-3xl md:text-4xl font-bold text-[#c9a84c]"
-                            style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
-                          >
-                            {entry.year}
-                          </span>
-                        </div>
-                        <h3
-                          className="text-xl font-bold text-[#2d5a3d] mb-2 md:text-right"
-                          style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
-                        >
-                          {entry.title}
-                        </h3>
-                        <p className="text-[#1a1814]/70 leading-relaxed">{entry.description}</p>
-                      </div>
+                    <div className="card p-6 md:p-8">
+                      <span
+                        className="text-2xl md:text-3xl font-bold text-[#c9a84c] block mb-1"
+                        style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                      >
+                        {entry.year}
+                      </span>
+                      <h3
+                        className="text-lg font-bold text-[#2d5a3d] mb-2"
+                        style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+                      >
+                        {entry.title}
+                      </h3>
+                      <p className="text-[#1a1814]/70 text-sm md:text-base leading-relaxed">{entry.description}</p>
                     </div>
                   </div>
                 </ScrollReveal>
