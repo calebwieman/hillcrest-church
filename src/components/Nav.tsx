@@ -16,7 +16,7 @@ export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -28,12 +28,6 @@ export default function Nav() {
                 fill
                 className="object-contain"
               />
-            </div>
-            <div className="hidden md:block">
-              <p className="text-[#2d5a3d] font-bold text-lg leading-tight" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-                Hillcrest
-              </p>
-              <p className="text-[#7a5c3a] text-xs leading-tight">Baptist Church</p>
             </div>
           </Link>
 
