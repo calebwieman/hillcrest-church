@@ -103,8 +103,8 @@ a, button {
   @apply transition-all duration-200;
 }
 
-/* Pine tree: gentle wind sway */
-@keyframes pineSway {
+/* Tree: wind sway */
+@keyframes treeSway {
   0%, 100% { transform: rotate(0deg); }
   20% { transform: rotate(4deg); }
   40% { transform: rotate(-1deg); }
@@ -112,14 +112,41 @@ a, button {
   80% { transform: rotate(-2deg); }
 }
 
-@keyframes pineBob {
+@keyframes treeBob {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-2px); }
 }
 
-.tree-icon {
+@keyframes crossPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+@keyframes bibleGlow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(201,168,76,0)); }
+  50% { filter: drop-shadow(0 0 6px rgba(201,168,76,0.6)); }
+}
+
+@keyframes cupShimmer {
+  0%, 100% { opacity: 1; }
+  30% { opacity: 0.8; }
+  60% { opacity: 1; }
+  80% { opacity: 0.9; }
+}
+
+.icon-tree {
   transform-origin: bottom center;
-  overflow: visible;
-  animation: pineSway 5s ease-in-out infinite, pineBob 3s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  animation: treeSway 5s ease-in-out infinite, treeBob 3s ease-in-out infinite;
+}
+
+.icon-cross {
+  animation: crossPulse 3s ease-in-out infinite;
+}
+
+.icon-bible {
+  animation: bibleGlow 3.5s ease-in-out infinite;
+}
+
+.icon-cup {
+  animation: cupShimmer 4s ease-in-out infinite;
 }

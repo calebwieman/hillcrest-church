@@ -144,26 +144,45 @@ export default function OurStory() {
               {timeline.map((entry, i) => (
                 <ScrollReveal key={entry.year} delay={i * 0.1}>
                   <div className="relative pl-12 md:pl-20">
-                    {/* Pine tree badge */}
+                    {/* Year badge */}
                     <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-[#2d5a3d] flex items-center justify-center shadow-md z-10 overflow-hidden">
-                      <svg
-                        viewBox="0 0 32 40"
-                        className="w-7 h-8 text-[#f5f0e6] tree-icon"
-                        style={{ animationDelay: treeDelays[i] }}
-                        fill="currentColor"
-                      >
-                        {/* Jagged conifer silhouette using a clip-path approach with triangle tiers */}
-                        <g>
-                          {/* Bottom tier — wide with notch cutouts */}
+                      {i === 0 ? (
+                        /* Cross — Church is Born */
+                        <svg viewBox="0 0 32 32" className="w-6 h-6 text-[#f5f0e6] icon-cross" fill="currentColor">
+                          <rect x="13" y="4" width="6" height="24" rx="1" />
+                          <rect x="6" y="11" width="20" height="6" rx="1" />
+                        </svg>
+                      ) : i === 1 ? (
+                        /* Pine tree — Growing Strong */
+                        <svg viewBox="0 0 32 40" className="w-6 h-7 text-[#f5f0e6] icon-tree" style={{ animationDelay: treeDelays[i] }} fill="currentColor">
                           <polygon points="16,22 2,36 5,33 9,37 12,33 16,36 20,33 23,37 27,33 30,36 16,22" />
-                          {/* Middle tier */}
                           <polygon points="16,13 6,25 9,23 13,26 16,23 19,26 23,23 26,25 16,13" />
-                          {/* Top tier */}
                           <polygon points="16,4 10,13 12,12 14,14 16,11 18,14 20,12 22,13 16,4" />
-                          {/* Trunk */}
                           <rect x="13" y="36" width="6" height="4" rx="1" opacity="0.6" />
-                        </g>
-                      </svg>
+                        </svg>
+                      ) : i === 2 ? (
+                        /* Bible — A Place to Worship */
+                        <svg viewBox="0 0 32 32" className="w-6 h-6 text-[#f5f0e6] icon-bible" fill="currentColor">
+                          <rect x="4" y="5" width="24" height="22" rx="2" />
+                          <rect x="6" y="7" width="20" height="18" rx="1" fill="#2d5a3d" />
+                          <rect x="9" y="10" width="14" height="2" rx="0.5" fill="currentColor" opacity="0.5" />
+                          <rect x="9" y="14" width="14" height="1" rx="0.5" fill="currentColor" opacity="0.3" />
+                          <rect x="9" y="17" width="10" height="1" rx="0.5" fill="currentColor" opacity="0.3" />
+                          <rect x="9" y="20" width="12" height="1" rx="0.5" fill="currentColor" opacity="0.3" />
+                          <rect x="9" y="23" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.3" />
+                        </svg>
+                      ) : (
+                        /* Cup of wine — A New Sanctuary */
+                        <svg viewBox="0 0 32 32" className="w-6 h-6 text-[#f5f0e6] icon-cup" fill="currentColor">
+                          <path d="M10 4 L22 4 L20 18 Q19.5 22 16 22 Q12.5 22 12 18 Z" />
+                          <rect x="14.5" y="22" width="3" height="4" rx="0.5" />
+                          <rect x="11" y="26" width="10" height="2" rx="1" />
+                          {/* Wine in cup */}
+                          <path d="M11 10 Q10.5 14 11 18 L21 18 Q21.5 14 21 10 Z" fill="#8b1a1a" opacity="0.8" />
+                          {/* Rim highlight */}
+                          <ellipse cx="16" cy="4" rx="6" ry="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
+                        </svg>
+                      )}
                     </div>
 
                     <div className="card p-6 md:p-8">
