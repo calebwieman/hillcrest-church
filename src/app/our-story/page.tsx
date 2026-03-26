@@ -138,7 +138,7 @@ export default function OurStory() {
 
           <div className="relative">
             {/* Timeline line — from first circle center to last circle center */}
-            <div className="absolute left-4 md:left-8 top-[72px] bottom-[96px] w-0.5 bg-[#c9a84c]/30" />
+            <div className="absolute left-4 md:left-8 top-[52px] bottom-[72px] w-0.5 bg-[#c9a84c]/30" />
 
             <div className="space-y-8">
               {timeline.map((entry, i) => (
