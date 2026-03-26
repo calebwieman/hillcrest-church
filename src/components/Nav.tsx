@@ -21,7 +21,7 @@ export default function Nav() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 md:hover:opacity-80 transition-opacity">
-            <div className="relative w-56 h-16 flex-shrink-0">
+            <div className="relative w-40 h-12 flex-shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="Hillcrest Baptist Church"
