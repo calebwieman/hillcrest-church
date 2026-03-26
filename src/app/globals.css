@@ -103,19 +103,62 @@ a, button {
   @apply transition-all duration-200;
 }
 
-/* Pine tree sway animation */
-@keyframes treeSway {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  25% { transform: rotate(4deg) scale(1.02); }
-  75% { transform: rotate(-2deg) scale(0.99); }
+/* Wind gust effect on trees */
+@keyframes windGust {
+  0%, 100% { transform: rotate(0deg) skewX(0deg); }
+  15% { transform: rotate(3deg) skewX(1deg); }
+  30% { transform: rotate(-1deg) skewX(-0.5deg); }
+  50% { transform: rotate(2deg) skewX(0.5deg); }
+  70% { transform: rotate(-2deg) skewX(-0.5deg); }
+  85% { transform: rotate(1deg) skewX(0deg); }
 }
 
-@keyframes treeBob {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-1.5px); }
+@keyframes branchLeft {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-3deg); }
+  60% { transform: rotate(-6deg); }
+  80% { transform: rotate(-2deg); }
+}
+
+@keyframes branchRight {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(6deg); }
+  40% { transform: rotate(2deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(1deg); }
+}
+
+@keyframes foliagePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+  50% { opacity: 0; transform: translateX(100%); }
 }
 
 .tree-icon {
   transform-origin: bottom center;
-  animation: treeSway 4s ease-in-out infinite, treeBob 3s ease-in-out infinite;
+  overflow: visible;
+}
+
+.tree-branch-left {
+  transform-origin: 50% 100%;
+  animation: branchLeft 3.5s ease-in-out infinite;
+}
+
+.tree-branch-right {
+  transform-origin: 50% 100%;
+  animation: branchRight 3.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.tree-foliage {
+  animation: foliagePulse 4s ease-in-out infinite;
+}
+
+.tree-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
 }
